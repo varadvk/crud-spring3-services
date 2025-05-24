@@ -56,7 +56,7 @@ jobs:
 
       - name: Tag Docker image
         run: |
-          IMAGE_URI="${{ steps.login-ecr.outputs.registry }}/codersapp-repo-${{ github.event.inputs.environment }}:${{ github.event.inputs.image_tag }}"
+          IMAGE_URI="${{ steps.login-ecr.outputs.registry }}/codersapp-ecr-repo-${{ github.event.inputs.environment }}:${{ github.event.inputs.image_tag }}"
           docker tag codersapp-ecr-repo-${{ github.event.inputs.environment }}:${{ github.event.inputs.image_tag }} $IMAGE_URI
 
       - name: Push Docker image to ECR
